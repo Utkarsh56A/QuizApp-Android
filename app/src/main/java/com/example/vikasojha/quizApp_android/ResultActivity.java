@@ -1,14 +1,11 @@
-package com.example.vikasojha.quizbee;
+package com.example.vikasojha.quizApp;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.QuickContactBadge;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class ResultActivity extends AppCompatActivity {
     TextView tv, tv2, tv3;
@@ -30,8 +27,8 @@ public class ResultActivity extends AppCompatActivity {
         sb2.append("Wrong Answers: " + QuestionsActivity.wrong + "\n");
         StringBuffer sb3 = new StringBuffer();
         sb3.append("Final Score: " + QuestionsActivity.correct + "\n");
-        tv.setText(sb);
-        tv2.setText(sb2);
+        tv.setText(sb2);
+        tv2.setText(sb);
         tv3.setText(sb3);
 
         QuestionsActivity.correct=0;

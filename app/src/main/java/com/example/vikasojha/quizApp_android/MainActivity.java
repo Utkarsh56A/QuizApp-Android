@@ -1,9 +1,8 @@
-package com.example.vikasojha.quizbee;
+package com.example.vikasojha.quizApp;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,10 +22,18 @@ public class MainActivity extends AppCompatActivity {
                 startbutton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String name=nametext.getText().toString();
-                        Intent intent=new Intent(getApplicationContext(),QuestionsActivity.class);
-                        intent.putExtra("myname",name);
-                        startActivity(intent);
+                        String name = nametext.getText().toString();
+
+
+                         if (isEmpty(nametext)) {
+                            Toast.makeText(getApplicationContext(), "Enter a name", Toast.LENGTH_SHORT).show();
+
+                        }
+                        else {
+                            Intent intent = new Intent(getApplicationContext(), QuestionsActivity.class);
+                            intent.putExtra("myname", name);
+                            startActivity(intent);
+                        }
                     }
                 });
 
@@ -37,5 +44,9 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
             }
         });
+    }
+
+    private boolean isEmpty(EditText etText) {
+        return etText.getText().toString().trim().length() == 0;
     }
 }

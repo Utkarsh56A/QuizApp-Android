@@ -1,4 +1,4 @@
-package com.example.vikasojha.quizbee;
+package com.example.vikasojha.quizApp;
 import android.graphics.Color;
 /**
  * Created by Sushant on 23-11-2016.
